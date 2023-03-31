@@ -1,0 +1,39 @@
+% a=1;
+% b=1;
+% c=1;
+% alfa=(-2:0.01:2)';
+% phi=0:0.01*pi:2*pi;
+% X=a*cosh(alfa)*cos(phi);
+% Y=b*cosh(alfa)*sin(phi);
+% Z=c*sinh(alfa)*ones(size(phi));
+% subplot(2,1,1)
+% mesh(X, Y, Z)
+% title('ThirdB mesh')
+% xlabel('x')
+% ylabel('y')
+% zlabel('z')
+% subplot(2,1,2)
+% surf(X, Y, Z)
+% title('ThirdB surf')
+% xlabel('x')
+% ylabel('y')
+% zlabel('z')
+clear all
+u1=-100;
+u2=100;
+v1=-100;
+v2=100;
+n1=0;
+n2=50;
+u=linspace(u1,u2,n1);
+v=linspace(v1,v2,n2);
+[UU,VV]=meshgrid(u,v);
+a=2;
+c=1;
+b=1;
+X=a.*cosh(UU).*cos(VV);
+Y=a.*cosh(UU).*sin(VV);
+Z=c.*sinh(UU)
+surf(X,Y,Z);
+hold on;
+surf(X,Y,-Z);
